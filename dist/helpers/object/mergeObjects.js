@@ -17,7 +17,12 @@ function mergeObjects(obj1, obj2) {
         if (propertyName in obj2) {
             var value2 = obj2[propertyName];
             if (value2 !== undefined) {
-                result[propertyName] = mergeObjects(value1, value2);
+                if (value1 === null || value1 === undefined) {
+                    result[propertyName] = (0, cloneObject_1.cloneObject)(value2);
+                }
+                else {
+                    result[propertyName] = mergeObjects(value1, value2);
+                }
             }
             else {
                 // remove value

@@ -15,7 +15,11 @@ export function mergeObjects<T1, T2>(obj1: T1, obj2: T2): T1 & T2 {
         if (propertyName in obj2) {
             const value2 = (obj2 as any)[propertyName];
             if (value2 !== undefined) {
-                result[propertyName] = mergeObjects(value1, value2);
+                if (value1 === null || value1 === undefined) {
+                    result[propertyName] = cloneObject(value2);
+                } else {
+                    result[propertyName] = mergeObjects(value1, value2);
+                }
             } else {
                 // remove value
             }
