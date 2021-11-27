@@ -12,7 +12,7 @@
  * // => string | number | boolean | "Tarzan"
  */
 
-export type ValuesOf<T extends object> = {
+export type ValuesOfMap<T extends object> = {
     [K in keyof T]: T[K]
 }[keyof T];
 

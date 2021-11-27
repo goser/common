@@ -1,4 +1,4 @@
-import {ValuesOf} from './ValuesOfMap';
+import {ValuesOfMap} from './ValuesOfMap';
 
 // TODO find a way that has more elegance than an intermediate string literal map
 
@@ -27,4 +27,4 @@ type TupleMap<Type extends string> = {
  * type MyTuples = ExclusiveTuples<MyStrings>;
  * // => ["a", "c"] | ["c", "a"] | ["a", "b"] | ["b", "a"] | ["b", "c"] | ["c", "b"]
  */
-export type ExclusiveTuple<Type extends string> = ValuesOf<TupleMap<Type>>;
+export type ExclusiveTuple<Type extends string> = ValuesOfMap<TupleMap<Type>>;

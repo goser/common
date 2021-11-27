@@ -1,4 +1,4 @@
-import { ValuesOf } from './ValuesOfMap';
+import { ValuesOfMap } from './ValuesOfMap';
 declare type FullCombination<Type extends string> = `${Type}_${Type}`;
 declare type DuplicatesAsUnion<Type extends string> = {
     [P in Type]: `${P}_${P}`;
@@ -15,5 +15,5 @@ declare type TupleMap<Type extends string> = {
  * type MyTuples = ExclusiveTuples<MyStrings>;
  * // => ["a", "c"] | ["c", "a"] | ["a", "b"] | ["b", "a"] | ["b", "c"] | ["c", "b"]
  */
-export declare type ExclusiveTuple<Type extends string> = ValuesOf<TupleMap<Type>>;
+export declare type ExclusiveTuple<Type extends string> = ValuesOfMap<TupleMap<Type>>;
 export {};

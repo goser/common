@@ -11,6 +11,6 @@
  * type MyValues = ValuesOf<MyMappedType>;
  * // => string | number | boolean | "Tarzan"
  */
-export declare type ValuesOf<T extends object> = {
+export declare type ValuesOfMap<T extends object> = {
     [K in keyof T]: T[K];
 }[keyof T];
