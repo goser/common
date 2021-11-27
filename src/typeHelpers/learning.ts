@@ -4,6 +4,8 @@
 
 
 
+import {ValuesOf} from './ValuesOfMap';
+
 const localeStrings = [
     'de',
     'en',
@@ -51,3 +53,13 @@ type DuplicatesAsUnion = {
 
 type FilteredByDuplicatesAsUnion = Exclude<FullCombination, DuplicatesAsUnion>
 // => "de_en" | "de_fr" | "en_de" | "en_fr" | "fr_de" | "fr_en"
+
+
+//////////////////////////////////////////////////////////////////
+
+
+type Mu = {
+    [P in FilteredByDuplicatesAsUnion]: P extends `${infer L1}_${infer L2}` ? [L1, L2] : never
+}
+
+const testMu : ValuesOf<Mu> = ['fr','de']
