@@ -13,3 +13,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./misc"), exports);
 __exportStar(require("./html"), exports);
 __exportStar(require("./object"), exports);
+__exportStar(require("./array"), exports);
