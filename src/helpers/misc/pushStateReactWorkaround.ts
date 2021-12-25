@@ -11,6 +11,6 @@ export const pushStateReactWorkaround = (state: any, title: string, url: string)
         flag = true;
         requestAnimationFrame(() => flag = false);
     } else {
-        // window.history.replaceState(state, title, url);
+        window.history.replaceState(state, title, url);
     }
 };
