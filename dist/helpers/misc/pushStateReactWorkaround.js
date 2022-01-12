@@ -9,11 +9,13 @@ var flag = false;
  */
 var pushStateReactWorkaround = function (state, title, url) {
     if (!flag) {
+        console.log("ps 2");
         window.history.pushState(state, title, url);
         flag = true;
         requestAnimationFrame(function () { return flag = false; });
     }
     else {
+        console.log("ps 1");
         window.history.replaceState(state, title, url);
     }
 };
