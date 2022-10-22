@@ -1,6 +1,6 @@
 {
     "name": "@goser/common",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "license": "UNLICENSED",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
