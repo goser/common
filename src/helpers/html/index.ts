@@ -1,1 +1,2 @@
-export {cls} from './cls'
+export {cls} from './cls';
+import {isDecendant} from './isDecendant';
