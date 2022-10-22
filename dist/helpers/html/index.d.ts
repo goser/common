@@ -1,2 +1,2 @@
 export { cls } from './cls';
-export { isDecendant } from './isDecendant';
+export { isDescendant } from './isDescendant';

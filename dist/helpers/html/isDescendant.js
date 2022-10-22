@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isDecendant = void 0;
-var isDecendant = function (parent, child) {
+exports.isDescendant = void 0;
+var isDescendant = function (parent, child) {
     var node = child;
     while (node) {
         if (node === parent) {
@@ -11,4 +11,4 @@ var isDecendant = function (parent, child) {
     }
     return false;
 };
-exports.isDecendant = isDecendant;
+exports.isDescendant = isDescendant;

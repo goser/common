@@ -1,4 +1,4 @@
-export const isDecendant = (parent: Element, child: Element): boolean => {
+export const isDescendant = (parent: Element, child: Element): boolean => {
     let node: any = child;
     while (node) {
         if (node === parent) {
