@@ -1,28 +1,28 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "target": "es5",
-    "jsx": "react",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": "src",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+    "compilerOptions": {
+        "declaration": true,
+        "target": "es5",
+        "jsx": "react-jsx",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "src",
+        "rootDir": "src",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "skipLibCheck": true,
+        "strictNullChecks": true,
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ]
+    },
+    "exclude": [
+        "dist/**/*.js",
+        "dist/**/*.d.ts",
+        "src/**/*.test.ts",
+        "src/**/*.test.tsx"
     ]
-  },
-  "exclude": [
-    "dist/**/*",
-    "src/**/learning.ts",
-    "src/**/*.test.ts",
-    "src/**/*.test.tsx"
-  ]
 }
