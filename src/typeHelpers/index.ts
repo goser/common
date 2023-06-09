@@ -1,6 +1,6 @@
-export {DeepPartial} from './DeepPartial'
-export {ExclusiveTuple} from './ExclusiveTuple'
-export {GetValuesByType} from './GetValuesByType'
-export {ValuesOfMap} from './ValuesOfMap'
-export {Exclusive} from './Exclusive'
-export {WithoutOptional} from './WithoutOptional'
+export type {DeepPartial} from './DeepPartial';
+export type {ExclusiveTuple} from './ExclusiveTuple';
+export type {GetValuesByType} from './GetValuesByType';
+export type {ValuesOfMap} from './ValuesOfMap';
+export type {Exclusive} from './Exclusive';
+export type {WithoutOptional} from './WithoutOptional';
