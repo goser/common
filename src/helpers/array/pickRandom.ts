@@ -1,0 +1,1 @@
+export const pickRandom = (from: any[]) => from[Math.floor(Math.random() * from.length)];

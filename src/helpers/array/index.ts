@@ -1,1 +1,3 @@
-export {shuffleArray} from './shuffleArray';
+export * from './pickRandom';
+export * from './shuffleArray';
+
