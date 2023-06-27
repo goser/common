@@ -1,2 +1,5 @@
-export { cls } from './cls';
-export { isDescendant } from './isDescendant';
+export * from './cls';
+export * from './isDescendant';
+export * from './isMobile';
+export * from './isOrientationLandscape';
+export * from './isOrientationPortrait';
