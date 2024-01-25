@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
         "declaration": true,
-        "target": "es5",
+        "target": "ESNext",
         "jsx": "react-jsx",
-        "module": "commonjs",
+        "module": "ESNext",
         "moduleResolution": "node",
-        "outDir": "src",
+        "outDir": "dist",
         "rootDir": "src",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
@@ -21,8 +21,7 @@
         ]
     },
     "exclude": [
-        "dist/**/*.js",
-        "dist/**/*.d.ts",
+        "dist",
         "src/**/*.test.ts",
         "src/**/*.test.tsx"
     ]
