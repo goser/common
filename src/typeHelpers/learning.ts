@@ -2,6 +2,8 @@
 // this file contains typing stuff that is not needed but helped me understanding things
 //
 
+import {Equal} from './Equal';
+import {Expect} from './Expect';
 import {ValuesOfMap} from './ValuesOfMap';
 
 const localeStrings = [
@@ -61,3 +63,16 @@ type Mu = {
 };
 
 const testMu: ValuesOfMap<Mu> = ['fr', 'de'];
+
+// test Expect
+type Expect_OK = Expect<true>;
+// @ts-expect-error
+type Expect_FAIL = Expect<false>;
+
+// test Equal
+type A = {a: number};
+type B = {a: number};
+type C = {a: string};
+type equal = Expect<Equal<A, B>>;
+// @ts-expect-error
+type notEqual = Expect<Equal<A, C>>;
