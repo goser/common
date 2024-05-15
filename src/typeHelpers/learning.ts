@@ -76,3 +76,69 @@ type C = {a: string};
 type equal = Expect<Equal<A, B>>;
 // @ts-expect-error
 type notEqual = Expect<Equal<A, C>>;
+
+
+
+
+type WithLoadingProperty<T> = T extends {type: any} ? (
+    T |
+    (Pick<T, Exclude<keyof T, 'type'>> & {type: `${T['type']}.loading`}) |
+    (Pick<T, Exclude<keyof T, 'type'>> & {type: `${T['type']}.done`})
+) : T
+
+
+type TypedAction = {type: string}
+
+
+type Action = {type: 'A', propA: number} | {type: 'B', propB: number} | {type: 'C', propC: number};
+
+const create = <A extends TypedAction, Type extends string = A['type']>(typeString: Type, method: (action: Extract<A, {type: Type}>) => void) => {
+
+}
+
+// KEEP THIS LINE TO UNDERSTAND THINGS
+const c2 = <A extends {type: string}>() => <T extends A['type'], L extends (a: Extract<A, {type: T}>) => void>(type: T, loader: L) => { };
+c2<Action>()('A', (a) => {a.type})
+
+const c3 = <A extends {type: string},>(t: any, l: any) => c2<A>()
+
+
+type Ex = Extract<Action, {type: 'B'}>;
+
+create<Action>('B', (p) => {
+    p.type = 'A';
+    p.type = 'B';
+});
+
+
+const map = {
+    a: () => 'A',
+    b: () => 1,
+    c: () => true,
+};
+
+type Map = typeof map;
+type Keys = keyof Map
+type Values = Map[Keys]
+
+type Distribute<U> = U extends any ? {type: U} : never
+type Mapped = Distribute<Values>
+
+type MapReturnTypes<T> = T extends any ? {[K in keyof T]: ReturnType<T[K] extends () => any ? T[K] : never>} : never
+
+type returnTypes = MapReturnTypes<Map>
+
+type UnionToIntersection<T> =
+    (T extends any ? (x: T) => any : never) extends
+    (x: infer R) => any ? R : never
+
+type Dupe<T> = keyof T extends any ? ({[K in keyof T]: {type: K, ret:T[K]}}) : never
+
+type deepMapped = Dupe<Map>;
+
+type Doppy<T> = T[keyof T]
+
+type d = Doppy<deepMapped>
+
+
+type MappedKeys = `${keyof Map}.loadinfg`
