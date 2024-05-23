@@ -1,4 +1,5 @@
 import {arePropertiesEqual} from './arePropertiesEqual';
+import {describe, expect, it} from 'vitest';
 
 describe('arePropertiesEqual', () => {
     it('should return true if two objects contain the same properties', () => {

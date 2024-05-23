@@ -19,4 +19,19 @@ const test = {
     fr_fr: 0
 };
 const testMu = ['fr', 'de'];
+const create = (typeString, method) => {
+};
+// KEEP THIS LINE TO UNDERSTAND THINGS
+const c2 = () => (type, loader) => { };
+c2()('A', (a) => { a.type; });
+const c3 = (t, l) => c2();
+create('B', (p) => {
+    p.type = 'A';
+    p.type = 'B';
+});
+const map = {
+    a: () => 'A',
+    b: () => 1,
+    c: () => true,
+};
 export {};
