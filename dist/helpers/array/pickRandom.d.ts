@@ -1,1 +1,1 @@
-export declare const pickRandom: (from: any[]) => any;
+export declare const pickRandom: <T>(from: T[]) => T;

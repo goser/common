@@ -1,1 +1,1 @@
-export const pickRandom = (from: any[]) => from[Math.floor(Math.random() * from.length)];
+export const pickRandom = <T>(from: T[]): T => from[Math.floor(Math.random() * from.length)];
