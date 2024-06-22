@@ -77,6 +77,13 @@ type equal = Expect<Equal<A, B>>;
 // @ts-expect-error
 type notEqual = Expect<Equal<A, C>>;
 
+// recursive properties as string e.g 'prop1.subProp.subProp'
+// includes functions too
+type NestedKeyOf<ObjectType extends object> =
+    {[Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
+        ? `${Key}` | `${Key}.${NestedKeyOf<ObjectType[Key]>}`
+        : `${Key}`
+    }[keyof ObjectType & (string | number)];
 
 
 
@@ -132,7 +139,7 @@ type UnionToIntersection<T> =
     (T extends any ? (x: T) => any : never) extends
     (x: infer R) => any ? R : never
 
-type Dupe<T> = keyof T extends any ? ({[K in keyof T]: {type: K, ret:T[K]}}) : never
+type Dupe<T> = keyof T extends any ? ({[K in keyof T]: {type: K, ret: T[K]}}) : never
 
 type deepMapped = Dupe<Map>;
 
