@@ -1,0 +1,1 @@
+export { capitalizeWords } from './capitalizeWords';
