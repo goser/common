@@ -1,1 +1,2 @@
-export {sleep} from './sleep';
+export {freeze} from './freeze'
+export {sleep} from './sleep'
