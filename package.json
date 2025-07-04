@@ -1,6 +1,6 @@
 {
     "name": "@goser/common",
-    "version": "0.0.29",
+    "version": "0.0.30",
     "license": "MIT",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -10,9 +10,9 @@
         "url": "https://github.com/goser/common.git"
     },
     "devDependencies": {
-        "@types/react": "^19.0.8",
-        "typescript": "^5.7.3",
-        "vitest": "^3.0.4"
+        "@types/react": "^19.1.8",
+        "typescript": "^5.8.3",
+        "vitest": "^3.2.4"
     },
     "scripts": {
         "build": "rm -rf dist && node_modules/.bin/tsc",
