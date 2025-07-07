@@ -1,15 +1,15 @@
-import {ValuesOfMap} from './ValuesOfMap';
+import {type ValuesOfMap} from './ValuesOfMap'
 
 // TODO find a way that has more elegance than an intermediate string literal map
 
 // store to string literal type
 // a union of all possible combinations
-type FullCombination<Type extends string> = `${Type}_${Type}`;
+type FullCombination<Type extends string> = `${Type}_${Type}`
 
 // a union of all duplicate combinations
 type DuplicatesAsUnion<Type extends string> = {
     [P in Type]: `${P}_${P}`
-}[Type];
+}[Type]
 
 // a union of possible combinations without duplicates
 type WithoutDuplicates<Type extends string> = Exclude<FullCombination<Type>, DuplicatesAsUnion<Type>>
@@ -31,7 +31,7 @@ type TupleStringMap<Type extends string, Separator extends string> = {
  * type MyTuples = ExclusiveTuples<MyStrings>;
  * // => ["a", "c"] | ["c", "a"] | ["a", "b"] | ["b", "a"] | ["b", "c"] | ["c", "b"]
  */
-export type ExclusiveTuple<Type extends string> = ValuesOfMap<TupleMap<Type>>;
+export type ExclusiveTuple<Type extends string> = ValuesOfMap<TupleMap<Type>>
 
 /**
  * Represents a tuple string with combinations of a given string type while excluding duplicates
@@ -41,4 +41,4 @@ export type ExclusiveTuple<Type extends string> = ValuesOfMap<TupleMap<Type>>;
  * type MyTuples = ExclusiveTupleString<MyStrings, '-'>;
  * // => "a-c" | "c-a" | "a-b" | "b-a" | "b-c" | "c-b"
  */
-export type ExclusiveTupleString<Type extends string, Separator extends string> = ValuesOfMap<TupleStringMap<Type, Separator>>;
+export type ExclusiveTupleString<Type extends string, Separator extends string> = ValuesOfMap<TupleStringMap<Type, Separator>>

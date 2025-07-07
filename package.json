@@ -1,6 +1,6 @@
 {
     "name": "@goser/common",
-    "version": "0.0.32",
+    "version": "0.0.33",
     "license": "MIT",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -16,9 +16,10 @@
         "vitest": "^3.2.4"
     },
     "scripts": {
-        "build": "rm -rf dist && node_modules/.bin/tsc",
-        "watch": "node_modules/.bin/tsc --watch",
-        "test": "vitest"
+        "build": "tsc -b",
+        "watch": "tsc --watch",
+        "test": "vitest",
+        "clear": "rm -rf dist"
     },
     "files": [
         "dist/**/*.*"

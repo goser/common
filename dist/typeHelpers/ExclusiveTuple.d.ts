@@ -1,4 +1,4 @@
-import { ValuesOfMap } from './ValuesOfMap';
+import { type ValuesOfMap } from './ValuesOfMap';
 type FullCombination<Type extends string> = `${Type}_${Type}`;
 type DuplicatesAsUnion<Type extends string> = {
     [P in Type]: `${P}_${P}`;

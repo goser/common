@@ -1,7 +1,7 @@
-export type { DeepPartial } from './DeepPartial';
-export type { ExclusiveTuple } from './ExclusiveTuple';
-export type { GetValuesByType } from './GetValuesByType';
-export type { ValuesOfMap } from './ValuesOfMap';
-export type { Exclusive } from './Exclusive';
-export type { WithoutOptional } from './WithoutOptional';
-export type { ObjectKeys2MethodName } from './ObjectKeys2MethodName';
+export type * from './DeepPartial';
+export type * from './Exclusive';
+export type * from './ExclusiveTuple';
+export type * from './GetValuesByType';
+export type * from './ObjectKeys2MethodName';
+export type * from './ValuesOfMap';
+export type * from './WithoutOptional';

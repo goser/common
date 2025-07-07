@@ -1,6 +1,9 @@
 //
 // this file contains typing stuff that is not needed but helped me understanding things
 //
+import {} from './Equal';
+import {} from './Expect';
+import {} from './ValuesOfMap';
 const localeStrings = [
     'de',
     'en',
@@ -34,4 +37,3 @@ const map = {
     b: () => 1,
     c: () => true,
 };
-export {};
