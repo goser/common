@@ -1,1 +1,2 @@
-export {capitalizeWords} from './capitalizeWords';
+export * from './capitalizeWords'
+

@@ -1,2 +1,3 @@
-export {freeze} from './freeze'
-export {sleep} from './sleep'
+export * from './freeze'
+export * from './sleep'
+
