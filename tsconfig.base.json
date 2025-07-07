@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "isolatedModules": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "verbatimModuleSyntax": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "erasableSyntaxOnly": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedSideEffectImports": true,
+        "forceConsistentCasingInFileNames": true,
+    },
+}

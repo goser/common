@@ -1,4 +1,5 @@
 {
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "tsBuildInfoFile": "node_modules/.tmp/tsconfig.tsbuildinfo",
         "declaration": true,
@@ -7,19 +8,8 @@
         "outDir": "dist",
         "rootDir": "src",
         "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "noImplicitAny": true,
         "skipLibCheck": true,
-        "strictNullChecks": true,
-        "isolatedModules": true,
         "moduleResolution": "bundler",
-        "verbatimModuleSyntax": true,
-        // "noUnusedLocals": true,
-        // "noUnusedParameters": true,
-        "erasableSyntaxOnly": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUncheckedSideEffectImports": true,
         "lib": [
             "dom",
             "dom.iterable",
