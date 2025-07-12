@@ -1,3 +1,4 @@
+// @ts-nocheck
 //
 // this file contains typing stuff that is not needed but helped me understanding things
 //
