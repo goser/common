@@ -3,21 +3,35 @@ export const WAIT_FOR_DEFAULT_POLL_TIME = 250;
 /**
  * Creates a promise that polls a function to resolve with a value.
  * @param resolver Function that returns the value that should be waited for
- * @param timeoutMs Time to wait for
- * @param message Optional message to append to reject message
- * @param unresolvedValue Optional value that should be considered non result (default undefined)
+ * @param Options Options for the wait
  * @returns Promise that resolves when resolver has a result or rejects on timeout
  */
-export async function waitFor(resolver, timeoutMs, message, unresolvedValue) {
-    timeoutMs = timeoutMs || WAIT_FOR_DEFAULT_TIMEOUT;
+export async function waitFor(resolver, options = {}) {
+    const timeoutMs = options.timeoutMs || WAIT_FOR_DEFAULT_TIMEOUT;
+    const { unresolvedValue, message, pollMs } = options;
     return new Promise((resolve, reject) => {
-        const interval = setInterval(() => {
+        let interval;
+        const check = () => {
             const result = resolver();
-            if (result !== unresolvedValue) {
-                clear();
-                resolve(result);
+            function checkResult(res) {
+                if (res !== unresolvedValue) {
+                    clear();
+                    resolve(res);
+                }
+                else {
+                    next();
+                }
             }
-        }, WAIT_FOR_DEFAULT_POLL_TIME);
+            if (result instanceof Promise) {
+                result.then(checkResult).catch(reason => reject(reason));
+            }
+            else {
+                checkResult(result);
+            }
+        };
+        const next = () => {
+            interval = setTimeout(check, pollMs || WAIT_FOR_DEFAULT_POLL_TIME);
+        };
         let timeout = 0;
         if (timeoutMs > 0) {
             timeout = setTimeout(() => {
@@ -29,5 +43,6 @@ export async function waitFor(resolver, timeoutMs, message, unresolvedValue) {
             clearInterval(interval);
             clearTimeout(timeout);
         };
+        next();
     });
 }
